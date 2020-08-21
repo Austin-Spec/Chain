@@ -5,16 +5,16 @@ class BaseClass{
             'friction':1.0,
             'density':1.0
         }
-        this.body = Bodies.rectangle(x, y, width, height, options);
+        this.dummy = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
         this.image = loadImage("sprites/base.png");
-        World.add(world, this.body);
+        World.add(world, this.dummy);
       }
       display(){
-        var angle = this.body.angle;
+        var angle = this.dummy.angle;
         push();
-        translate(this.body.position.x, this.body.position.y);
+        translate(this.dummy.position.x, this.dummy.position.y);
         rotate(angle);
         imageMode(CENTER);
         image(this.image, 0, 0, this.width, this.height);
